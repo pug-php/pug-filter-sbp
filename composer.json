@@ -1,0 +1,25 @@
+{
+    "name": "kylekatarnls/jade-filter-sbp",
+    "description": "Sbp filter for Jade",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kyle Katarn",
+            "email": "kylekatarnls@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "kylekatarnls/jade-php": "dev-master",
+        "kylekatarnls/sbp": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Jade": "src/"
+        }
+    }
+}
