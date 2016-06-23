@@ -1,6 +1,6 @@
 <?php
 
-use Jade\Jade;
+use Pug\Pug;
 
 class ExamplesTest extends \PHPUnit_Framework_TestCase {
 
@@ -10,8 +10,8 @@ class ExamplesTest extends \PHPUnit_Framework_TestCase {
 
         $examples = __DIR__ . '/../examples';
         foreach (scandir($examples) as $file) {
-            if (substr($file, -5) === '.jade') {
-                $cases[] = array($examples . '/' . substr($file, 0, -5) . '.html', $examples . '/' . $file);
+            if (substr($file, -4) === '.pug') {
+                $cases[] = array($examples . '/' . substr($file, 0, -4) . '.html', $examples . '/' . $file);
             }
         }
 
@@ -23,7 +23,7 @@ class ExamplesTest extends \PHPUnit_Framework_TestCase {
      */
     public function testJadeGeneration($htmlFile, $jadeFile) {
 
-        $jade = new Jade();
+        $jade = new Pug();
         $actual = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', $jade->render($jadeFile)));
         $expected = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', file_get_contents($htmlFile)));
 
