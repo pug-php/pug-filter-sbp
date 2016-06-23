@@ -1,8 +1,8 @@
-# jade-filter-sbp
-SBP filter for Jade-php
+# pug-filter-sbp
+SBP filter for Pug-php
 
 ## Example
-```jade
+```pug
 p
   :sbp
     Foo
@@ -15,8 +15,7 @@ p
 ## Install
 
 ```shell
-composer require kylekatarnls/jade-php
-composer require kylekatarnls/jade-filter-sbp
+composer require pug-php/pug-filter-sbp
 ```
 
-See how to use Jade-php here: https://github.com/kylekatarnls/jade-php
+See how to use Pug-php here: https://github.com/pug-php/pug

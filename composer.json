@@ -1,5 +1,8 @@
 {
-    "name": "kylekatarnls/jade-filter-sbp",
+    "name": "pug-php/pug-filter-sbp",
+    "replace": {
+        "kylekatarnls/jade-filter-sbp": "self.version"
+    },
     "description": "Sbp filter for Jade",
     "type": "library",
     "license": "MIT",
@@ -11,7 +14,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "kylekatarnls/jade-php": "^1.8",
+        "pug-php/pug": "^1.11",
         "kylekatarnls/sbp": "^1.6"
     },
     "require-dev": {
@@ -19,7 +22,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Jade": "src/"
+            "Pug": "src/"
         }
     }
 }
