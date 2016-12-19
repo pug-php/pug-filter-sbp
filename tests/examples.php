@@ -2,10 +2,10 @@
 
 use Pug\Pug;
 
-class ExamplesTest extends \PHPUnit_Framework_TestCase {
-
-    public function caseProvider() {
-
+class ExamplesTest extends \PHPUnit_Framework_TestCase
+{
+    public function caseProvider()
+    {
         $cases = array();
 
         $examples = __DIR__ . '/../examples';
@@ -21,8 +21,8 @@ class ExamplesTest extends \PHPUnit_Framework_TestCase {
     /**
      * @dataProvider caseProvider
      */
-    public function testJadeGeneration($htmlFile, $jadeFile) {
-
+    public function testJadeGeneration($htmlFile, $jadeFile)
+    {
         $jade = new Pug();
         $actual = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', $jade->render($jadeFile)));
         $expected = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', file_get_contents($htmlFile)));
