@@ -21,12 +21,15 @@ class ExamplesTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider caseProvider
      */
-    public function testJadeGeneration($htmlFile, $jadeFile)
+    public function testPugGeneration($htmlFile, $pugFile)
     {
-        $jade = new Pug();
-        $actual = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', $jade->render($jadeFile)));
+        $pug = new Pug();
+        $renderFile = method_exists($pug, 'renderFile')
+            ? array($pug, 'renderFile')
+            : array($pug, 'render');
+        $actual = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', call_user_func($renderFile, $pugFile)));
         $expected = str_replace(array("\r", "\n", "\t"), '', preg_replace('`^\s+`', '', file_get_contents($htmlFile)));
 
-        $this->assertSame($expected, $actual, $jadeFile . ' should match ' . $htmlFile);
+        $this->assertSame($expected, $actual, $pugFile . ' should match ' . $htmlFile);
     }
 }
